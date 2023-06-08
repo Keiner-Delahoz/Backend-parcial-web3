@@ -39,8 +39,10 @@ public class ConsultaController {
 
     @PostMapping
     public ResponseEntity save(@RequestBody Consulta consulta){
-        consultaService.create(consulta);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        if (consulta.getNombre() != "" && consulta.getEmail() != "" && consulta.getDescripcion() != ""){
+            consultaService.create(consulta);
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @DeleteMapping("/{consultaId}")

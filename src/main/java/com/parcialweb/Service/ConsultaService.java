@@ -27,7 +27,7 @@ public class ConsultaService {
     }
 
     public void create(Consulta consulta) {
-        consultaRepository.save(consulta);
+            consultaRepository.save(consulta);
     }
 
     public void delete(Long id) throws Exception {

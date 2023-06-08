@@ -12,13 +12,15 @@ public class Consulta {
 
     private Long id;
 
+    @Column(nullable = false)
     private String nombre;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String email;
 
 //    @Column(unique = true, nullable = false)
 //    private Long celular;
 
+    @Column(nullable = false)
     private String descripcion;
 }
